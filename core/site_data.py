@@ -12,9 +12,10 @@ SITE = {
         {"label": "CodePen", "url": "https://codepen.io/yourusername"},
     ],
     "about": [
-        "This is placeholder text. Replace it in <code>core/site_data.py</code>. Links use the class <code>a</code>, e.g. <a class=\"a\" href=\"#\">Example Company</a>.",
-        "Add more paragraphs in the <code>about</code> list in <code>site_data.py</code>."
+        "I build web applications and enjoy turning ideas into clear, accessible products. I focus on clean code, performance, and good UX. Most of my work is in Python and JavaScript, with Django and React.",
+        "Previously I've worked with teams on production systems and side projects. I like writing docs and improving tooling. You can reach me via the links above or <a class=\"a\" href=\"mailto:you@example.com\">you@example.com</a>."
     ],
+    "resume": "documents/resume-example.pdf",  # Set to "documents/resume.pdf" when you add your own; set to None to hide the link
     "experience": [
         {
             "date": "2024 — PRESENT",

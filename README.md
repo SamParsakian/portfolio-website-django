@@ -108,7 +108,7 @@ No API keys or third-party secrets are required for this template.
 1. Open **`core/site_data.py`**.
 2. Replace the example profile (name, role, tagline), social links, about paragraphs, experience, projects, writing, and archive rows with your own.
 3. Keep the same structure (same keys); only change the values and image paths if you add new assets.
-4. Add your resume as **`static/documents/resume.pdf`** so the “View Full Résumé” link works (or change the link in the template).
+4. Resume: the site uses **`static/documents/resume-example.pdf`** by default. To use your own, add **`static/documents/resume.pdf`** and set `SITE["resume"]` to `"documents/resume.pdf"` in `site_data.py`; set to `None` to hide the link.
 
 ---
 

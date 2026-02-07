@@ -290,6 +290,15 @@ body{
 }
 .archive-a:hover{text-decoration:underline;}
 
+.writing-archive-head,
+.writing-archive-row{
+  grid-template-columns: 80px 2fr 1.2fr;
+}
+.writing-archive-title{
+  color: var(--white);
+  font-weight: 700;
+}
+
 .card-link{
   cursor: pointer;
 }

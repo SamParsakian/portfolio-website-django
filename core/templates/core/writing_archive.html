@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block title %}All Writing | {{ profile.name }}{% endblock %}
+{% block meta_description %}Writing and articles — {{ profile.name }}, {{ profile.role }}.{% endblock %}
+
+{% block content %}
+<div class="archive-page">
+  <div class="archive-wrap">
+
+    <a class="archive-back" href="/">← {{ profile.name }}</a>
+    <h1 class="archive-title">All Writing</h1>
+
+    <div class="archive-table writing-archive-table">
+      <div class="archive-head writing-archive-head">
+        <div>Year</div>
+        <div>Title</div>
+        <div>Link</div>
+      </div>
+
+      {% for w in writing %}
+      <div class="archive-row writing-archive-row">
+        <div class="archive-year">{{ w.year }}</div>
+        <div class="writing-archive-title">{{ w.title }}</div>
+        <div class="archive-link">
+          <a class="archive-a" href="{{ w.url }}" target="_blank" rel="noreferrer noopener">
+            Read <span class="ext">↗</span>
+          </a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+  </div>
+</div>
+{% endblock %}

@@ -39,6 +39,7 @@ Thumbs.db
 # Node (if ever added)
 node_modules/
 
-# Personal documents (add your own resume.pdf to static/documents/)
+# Personal documents (add your own resume as static/documents/resume.pdf; set SITE["resume"] in site_data.py)
 static/documents/*.pdf
+!static/documents/resume-example.pdf
 static/documents/resume.pdf

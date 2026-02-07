@@ -75,11 +75,13 @@
       </article>
       {% endfor %}
 
+      {% if resume_path %}
       <div class="section-cta">
-        <a class="cta-link" href="{% static 'documents/resume.pdf' %}" target="_blank" rel="noreferrer noopener">
+        <a class="cta-link" href="{% static resume_path %}" target="_blank" rel="noreferrer noopener">
           View Full Résumé <span class="ext">↗</span>
         </a>
       </div>
+      {% endif %}
     </section>
 
     <section id="projects" class="section">
@@ -117,7 +119,7 @@
       {% endfor %}
 
       <div class="section-cta">
-        <a class="cta-link" href="/archive">View Full Project Archive <span class="ext">→</span></a>
+        <a class="cta-link" href="{% url 'archive' %}">View Full Project Archive <span class="ext">→</span></a>
       </div>
     </section>
 
@@ -146,7 +148,8 @@
       </div>
       {% endfor %}
 
-      <div class="footer-note">
+      <div class="section-cta">
+        <a class="cta-link" href="{% url 'writing_archive' %}">View Full Writing Archive <span class="ext">↗</span></a>
       </div>
     </section>
   </main>
