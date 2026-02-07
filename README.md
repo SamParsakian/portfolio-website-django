@@ -29,10 +29,6 @@ A single-page Django portfolio template with a sticky sidebar and scrollable con
 
 ## Screenshots
 
-<!-- Add a screenshot or GIF of the home page here, e.g.:
-![Home page](docs/screenshot-home.png)
--->
-
 _Add a screenshot or short GIF of your portfolio here once you’ve customized it._
 
 ---
@@ -148,20 +144,7 @@ python manage.py test
 
 ## Demo
 
-<!-- If you deploy the template, add the live URL here:
-**Live demo:** [https://your-portfolio.example.com](https://your-portfolio.example.com)
--->
-
 _Add your live demo URL here after deployment._
-
----
-
-## What I learned (template author)
-
-- **Django:** Single-app structure, env-based settings, WhiteNoise for static files, and keeping all editable content in one data file (`site_data.py`).
-- **Security:** No secrets in repo; `.env` for config; production security headers when `DEBUG=False`.
-- **UX:** Sticky sidebar + scrollable content, skip link, and focus styles for keyboard users.
-- **Maintainability:** Clear project layout and a README that supports both “run it” and “deploy it.”
 
 ---
 
@@ -182,34 +165,3 @@ run-local-dev.sh # Local dev with env vars, no .env required
 ## License
 
 MIT. Use and adapt for your own portfolio.
-
----
-
-## Optional: clean commit history before first push
-
-If you want a short, readable history before pushing to GitHub:
-
-1. **Backup:** Ensure you have a copy of the repo (e.g. push to a backup branch or another remote).
-2. **Interactive rebase** (example: squash the last 3 commits into one):
-
-   ```bash
-   git rebase -i HEAD~3
-   ```
-
-   In the editor, leave the first line as `pick` and change the next two to `squash` (or `s`). Save and close. Edit the new combined commit message to something like:
-
-   ```
-   chore: release portfolio template for GitHub
-
-   - Generic placeholder content in site_data.py
-   - README and .env.example updates for public repo
-   - Exclude resume.pdf and duplicate assets
-   ```
-
-3. **Force-push** (only if this branch is not shared yet, or you’re sure no one else depends on the old history):
-   ```bash
-   git push --force-with-lease origin main
-   ```
-   `--force-with-lease` is safer than `--force` because it will abort if the remote has new commits you don’t have.
-
-If you prefer to keep the current history, you can skip this section and push as-is.

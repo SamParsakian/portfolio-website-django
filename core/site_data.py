@@ -1,5 +1,4 @@
-# Edit this file to customize the portfolio. All visible text and links come from here.
-# This is example/template content — replace with your own for your portfolio.
+# Portfolio content: edit name, links, about, experience, projects, writing. Replace placeholders with your own.
 
 SITE = {
     "profile": {

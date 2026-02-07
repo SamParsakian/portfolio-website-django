@@ -1,8 +1,4 @@
 #!/usr/bin/env bash
-# One-shot script: create venv, install deps, migrate, run server.
-# Run from project root: ./run.sh
-# Then open http://127.0.0.1:8000/
-
 set -e
 cd "$(dirname "$0")"
 

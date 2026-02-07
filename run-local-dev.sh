@@ -1,6 +1,4 @@
 #!/bin/bash
-# Sets env vars and runs Django development server (no .env required)
-
 echo "🧪 Starting local development server..."
 echo ""
 export DJANGO_DEBUG=1
