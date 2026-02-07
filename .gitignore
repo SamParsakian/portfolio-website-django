@@ -3,6 +3,8 @@ __pycache__/
 *.py[cod]
 *$py.class
 *.so
+*.egg
+*.egg-info/
 
 # Virtual environment
 .venv/
@@ -10,27 +12,33 @@ venv/
 ENV/
 env/
 
+# Environment and secrets — never commit
+.env
+.env.local
+.env.*
+!.env.example
+.envs/
+
 # Django
 db.sqlite3
 db.sqlite3-journal
+*.sqlite3
 staticfiles/
 media/
+*.log
+local_settings.py
 
-# Environment variables
-.env
-.env.local
-.envs/
-!.envs/.keep
-
-# IDE
+# IDE and OS
 .vscode/
 .idea/
 *.swp
 *.swo
-
-# OS
 .DS_Store
 Thumbs.db
 
-# Logs
-*.log
+# Node (if ever added)
+node_modules/
+
+# Personal documents (add your own resume.pdf to static/documents/)
+static/documents/*.pdf
+static/documents/resume.pdf

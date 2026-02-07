@@ -10,7 +10,6 @@
     navItems.forEach(a => a.classList.toggle("is-active", a.dataset.target === id));
   };
 
-  // NAV clicks
   navItems.forEach(a => {
     a.addEventListener("click", (e) => {
       const id = a.getAttribute("href")?.replace("#","");
@@ -30,7 +29,6 @@
     });
   });
 
-  // CARD click (same as before if you already added it)
   document.querySelectorAll(".card-row.card-link").forEach(card => {
     card.addEventListener("click", (e) => {
       if (e.target.closest("a")) return;
@@ -46,7 +44,6 @@
     });
   });
 
-  // Desktop only: forward mouse wheel from LEFT panel to RIGHT scroll container
   const left = document.querySelector(".left");
   const right = document.querySelector(".right");
 
@@ -55,21 +52,13 @@
   if (left && right) {
     left.addEventListener("wheel", (e) => {
       if (!isDesktopMode()) return;
-
-      // prevent the page from trying to scroll (or feeling slow)
       e.preventDefault();
-
-      // Handle deltaMode properly for consistent physics
       let deltaY = e.deltaY;
-      
-      // deltaMode 0 = pixels (default), 1 = lines, 2 = pages  
       if (e.deltaMode === 1) {
-        deltaY *= 16; // lines to pixels
+        deltaY *= 16;
       } else if (e.deltaMode === 2) {
-        deltaY *= window.innerHeight; // pages to pixels
+        deltaY *= window.innerHeight;
       }
-
-      // Use scrollBy with auto behavior to match native physics exactly
       right.scrollBy({ 
         top: deltaY, 
         left: 0, 
@@ -78,7 +67,6 @@
     }, { passive: false });
   }
 
-  // Scroll-spy that rebuilds on resize
   let io = null;
   const setupSpy = () => {
     if (io) { io.disconnect(); io = null; }
