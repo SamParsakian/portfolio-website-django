@@ -19,6 +19,8 @@ media/
 # Environment variables
 .env
 .env.local
+.envs/
+!.envs/.keep
 
 # IDE
 .vscode/

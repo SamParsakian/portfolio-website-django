@@ -10,22 +10,39 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
+import os
+import environ
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# Initialize environment variables
+env = environ.Env(DEBUG=(bool, False))
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
+# Load environment variables - try production first, then local development
+production_env = BASE_DIR / ".envs/.production/.django"
+local_env = BASE_DIR / ".envs/.local/.django"
+
+if production_env.exists():
+    env.read_env(production_env)
+elif local_env.exists():
+    env.read_env(local_env)
+else:
+    # Fallback for basic development without env files
+    pass
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-tpzd4#*h!@24mcfj^digh_owwz%=dj8ow@2blvx_!_zp85_38i'
+SECRET_KEY = env("DJANGO_SECRET_KEY", default="django-insecure-development-key-change-in-production")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = env.bool("DJANGO_DEBUG", default=True)
 
-ALLOWED_HOSTS = []
+# Production-ready allowed hosts
+ALLOWED_HOSTS = env.list("DJANGO_ALLOWED_HOSTS", default=["localhost", "127.0.0.1"])
+
+# CSRF trusted origins for HTTPS
+CSRF_TRUSTED_ORIGINS = env.list("DJANGO_CSRF_TRUSTED_ORIGINS", default=[])
 
 
 # Application definition
@@ -52,6 +69,24 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'config.urls'
+
+# ===== DJANGO SECURITY SETTINGS =====
+if not DEBUG:
+    # If behind Nginx/HTTPS
+    SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
+    
+    SECURE_SSL_REDIRECT = True
+    
+    SESSION_COOKIE_SECURE = True
+    CSRF_COOKIE_SECURE = True
+    
+    SECURE_HSTS_SECONDS = 3600  # 1 hour first (increase later)
+    SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+    SECURE_HSTS_PRELOAD = False  # keep False until you're 100% sure
+    
+    SECURE_CONTENT_TYPE_NOSNIFF = True
+    X_FRAME_OPTIONS = "DENY"
+    SECURE_REFERRER_POLICY = "strict-origin-when-cross-origin"
 
 TEMPLATES = [
     {
@@ -126,3 +161,6 @@ STATIC_ROOT = BASE_DIR / "staticfiles"
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
+# WhiteNoise configuration for better caching
+WHITENOISE_MAX_AGE = 31536000  # 1 year for hashed assets

@@ -37,7 +37,8 @@ SITE = {
             "url": "https://spotify-profile.herokuapp.com",
             "desc": "A web app for visualizing personalized Spotify data. View your top artists, tracks, and playlists over different time ranges.",
             "tags": ["React", "Express", "Spotify API", "Heroku"],
-            "thumb": "img/project-spotify-profile.jpg",
+            "thumb": "img/optimized/projects/project-spotify-profile.jpg",
+            "thumb_webp": "img/optimized_webp/projects/project-spotify-profile.webp",
             "thumb_alt": "Spotify Profile web application screenshot"
         },
         {
@@ -45,17 +46,24 @@ SITE = {
             "url": "https://halcyon-theme.netlify.app",
             "desc": "A minimal, dark blue theme for VS Code, Sublime Text, Atom, and more.",
             "tags": ["VS Code", "Theme", "Netlify"],
-            "thumb": "img/project-halcyon-theme.jpg",
+            "thumb": "img/optimized/projects/project-halcyon-theme.jpg",
+            "thumb_webp": "img/optimized_webp/projects/project-halcyon-theme.webp",
             "thumb_alt": "Halcyon VS Code theme preview"
         },
     ],
     "writing": [
         {"year": "2024", "title": "Accessibility Pitfalls and How to Avoid Them",
-            "url": "https://klaviyo.tech", "thumb": "img/writing-accessibility-pitfalls.jpg"},
+            "url": "https://klaviyo.tech", 
+            "thumb": "img/optimized/writing/writing-accessibility-pitfalls.jpg",
+            "thumb_webp": "img/optimized_webp/writing/writing-accessibility-pitfalls.webp"},
         {"year": "2020", "title": "Integrating Algolia Search with WordPress Multisite",
-            "url": "https://upstatement.com", "thumb": "img/writing-algolia-search.jpg"},
+            "url": "https://upstatement.com", 
+            "thumb": "img/optimized/writing/writing-algolia-search.jpg",
+            "thumb_webp": "img/optimized_webp/writing/writing-algolia-search.webp"},
         {"year": "2019", "title": "Building a Headless Mobile App CMS From Scratch",
-            "url": "https://upstatement.com", "thumb": "img/writing-headless-cms.jpg"},
+            "url": "https://upstatement.com", 
+            "thumb": "img/optimized/writing/writing-headless-cms.jpg",
+            "thumb_webp": "img/optimized_webp/writing/writing-headless-cms.webp"},
     ],
     "archive_rows": [
         {
