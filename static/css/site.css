@@ -1,0 +1,189 @@
+:root{
+  --navy:#0a192f;
+  --light-navy:#112240;
+  --lightest-navy:#233554;
+
+  --slate:#8892b0;
+  --light-slate:#a8b2d1;
+  --lightest-slate:#ccd6f6;
+  --white:#e6f1ff;
+
+  --accent:#64ffda;
+
+  --chip-bg:#173441;
+  --card-hover:rgba(255,255,255,0.04);
+  --card-border:rgba(100,255,218,0.14);
+}
+
+html,body{height:100%;}
+body{
+  margin:0;
+  background: radial-gradient(800px 400px at 20% 10%, rgba(100,255,218,0.06), transparent 60%),
+              linear-gradient(180deg, #0b1224 0%, var(--navy) 35%, #081226 100%);
+  color:var(--slate);
+}
+
+.skip-link{
+  position:absolute;
+  left:-999px;
+  top:12px;
+  background:var(--lightest-navy);
+  color:var(--white);
+  padding:8px 12px;
+  border-radius:8px;
+  text-decoration:none;
+}
+.skip-link:focus{left:12px;}
+
+.page{
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 90px 84px;
+  display:flex;
+  gap: 110px;
+}
+
+.left{width:460px;}
+.left-inner{
+  position: sticky;
+  top: 90px;
+  display:flex;
+  flex-direction:column;
+  min-height: calc(100vh - 180px);
+}
+
+.right{
+  flex:1;
+  height: calc(100vh - 180px);
+  overflow-y:auto;
+  scroll-behavior:smooth;
+  padding-right: 10px;
+}
+
+.name{color:var(--white); font-size:56px; font-weight:800; margin:0;}
+.role{color:var(--lightest-slate); font-size:18px; font-weight:600; margin:14px 0 0;}
+.tagline{margin:18px 0 0; font-size:16px; line-height:1.75; max-width:34ch;}
+
+.section-nav{margin-top:48px; display:flex; flex-direction:column; gap:14px;}
+.nav-item{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  text-decoration:none;
+  color:var(--slate);
+  letter-spacing:0.12em;
+  font-size:12px;
+  font-weight:600;
+  transition: all 180ms ease;
+}
+.nav-line{
+  height:1px;
+  width:24px;
+  background:rgba(204,214,246,0.35);
+  transition: all 180ms ease;
+}
+.nav-item:hover{color:var(--lightest-slate);}
+.nav-item:hover .nav-line{width:34px; background:rgba(204,214,246,0.55);}
+
+/* ACTIVE: label a bit bigger + line longer */
+.nav-item.is-active{
+  color:var(--lightest-slate);
+  font-size:13px;
+}
+.nav-item.is-active .nav-line{
+  width:52px;
+  background:rgba(204,214,246,0.75);
+}
+
+.social{margin-top:auto; display:flex; gap:14px;}
+.social-link{
+  color:rgba(204,214,246,0.65);
+  text-decoration:none;
+  transition: all 180ms ease;
+}
+.social-link:hover{color:var(--white);}
+
+.section{padding: 8px 0 78px;}
+.section-title{
+  color:var(--lightest-slate);
+  font-size:16px;
+  font-weight:700;
+  margin: 0 0 18px;
+}
+.p{margin:0 0 14px; line-height:1.8;}
+.a{color:var(--accent); text-decoration:none;}
+.a:hover{text-decoration:underline;}
+
+.card-row{
+  display:flex;
+  gap:22px;
+  padding:18px 18px;
+  border-radius:14px;
+  transition: all 180ms ease;
+}
+.card-row:hover{
+  background:var(--card-hover);
+  outline: 1px solid var(--card-border);
+}
+.card-left{
+  width:160px;
+  font-size:12px;
+  letter-spacing:0.08em;
+  color:rgba(168,178,209,0.75);
+}
+.thumb{width:180px; flex:0 0 180px;}
+.thumb img{
+  width:180px; height:96px; border-radius:12px; object-fit:cover;
+}
+.card-right{flex:1;}
+.card-title{
+  color:var(--white);
+  font-weight:700;
+  text-decoration:none;
+  display:inline-block;
+  margin-bottom:10px;
+}
+.card-title:hover{color:var(--accent);}
+.ext{font-size:0.95em; opacity:0.9;}
+
+.tags{display:flex; flex-wrap:wrap; gap:10px; margin-top:10px;}
+.tag{
+  background:var(--chip-bg);
+  color:var(--accent);
+  padding:6px 10px;
+  border-radius:999px;
+  font-size:12px;
+  font-weight:600;
+}
+
+.section-cta{padding:22px 0 0; text-align:center;}
+.cta-link{
+  color:var(--lightest-slate);
+  text-decoration:none;
+  font-weight:600;
+}
+.cta-link:hover{color:var(--accent);}
+
+.writing-row{
+  display:flex;
+  gap:18px;
+  align-items:center;
+  padding:14px 0;
+}
+.writing-thumb{
+  width:144px;
+  height:81px;
+  border-radius:12px;
+  object-fit:cover;
+}
+.writing-year{
+  font-size:12px;
+  letter-spacing:0.08em;
+  color:rgba(168,178,209,0.75);
+  margin-bottom:6px;
+}
+.footer-note{
+  margin-top:40px;
+  font-size:13px;
+  color:rgba(168,178,209,0.75);
+}
