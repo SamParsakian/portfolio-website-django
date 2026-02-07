@@ -78,7 +78,7 @@ body{
 }
 .nav-line{
   height:1px;
-  width:24px;
+  width:26px;
   background:rgba(204,214,246,0.35);
   transition: all 180ms ease;
 }
@@ -87,12 +87,12 @@ body{
 
 /* ACTIVE: label a bit bigger + line longer */
 .nav-item.is-active{
-  color:var(--lightest-slate);
-  font-size:13px;
+  color: var(--white);
+  font-size:14px;
 }
 .nav-item.is-active .nav-line{
-  width:52px;
-  background:rgba(204,214,246,0.75);
+  width:56px;
+  background: rgba(230,241,255,0.8);
 }
 
 .social{margin-top:auto; display:flex; gap:14px;}
@@ -271,3 +271,30 @@ body{
   font-weight:600;
 }
 .archive-a:hover{text-decoration:underline;}
+
+/* ===== Enhanced card hover effects ===== */
+.card-link{
+  cursor: pointer;
+}
+
+/* Make hover feel like a clean glass box */
+.card-row:hover{
+  background: rgba(17, 34, 64, 0.55);
+  outline: 1px solid rgba(100, 255, 218, 0.10);
+}
+
+/* Title shifts slightly on hover */
+.card-row:hover .card-title{
+  color: var(--accent);
+}
+
+/* Focus ring on card (keyboard) */
+.card-row:focus{
+  outline: 1px solid rgba(100, 255, 218, 0.22);
+  background: rgba(17, 34, 64, 0.55);
+}
+
+/* Remove ugly default outline on inner links; keep clean look */
+.card-row a:focus{
+  outline: none;
+}
