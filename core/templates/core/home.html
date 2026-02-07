@@ -48,19 +48,25 @@
     <section id="experience" class="section">
       <h2 class="section-title">Experience</h2>
 
-      <!-- placeholders: next steps will build real cards -->
-      <div class="card-row">
-        <div class="card-left">2024 — PRESENT</div>
+      {% for x in experience %}
+      <article class="card-row card-link">
+        <div class="card-left">{{ x.date }}</div>
+
         <div class="card-right">
-          <a class="card-title" href="#" target="_blank" rel="noreferrer noopener">
-            Senior Frontend Engineer <span class="ext">↗</span>
+          <a class="card-title" href="{{ x.url }}" target="_blank" rel="noreferrer noopener">
+            {{ x.title }} · {{ x.org }} <span class="ext">↗</span>
           </a>
-          <p class="p">Short description placeholder.</p>
+
+          <p class="p">{{ x.desc }}</p>
+
           <div class="tags">
-            <span class="tag">JavaScript</span><span class="tag">TypeScript</span>
+            {% for t in x.tags %}
+              <span class="tag">{{ t }}</span>
+            {% endfor %}
           </div>
         </div>
-      </div>
+      </article>
+      {% endfor %}
 
       <div class="section-cta">
         <a class="cta-link" href="/resume.pdf" target="_blank" rel="noreferrer noopener">
@@ -69,46 +75,55 @@
       </div>
     </section>
 
+    {% load static %}
     <section id="projects" class="section">
       <h2 class="section-title">Projects</h2>
 
-      <div class="card-row">
+      {% for p in projects %}
+      <article class="card-row card-link">
         <div class="thumb">
-          <img src="https://via.placeholder.com/180x96" alt="Project thumbnail">
+          <img src="{% static p.thumb %}" alt="{{ p.thumb_alt }}">
         </div>
+
         <div class="card-right">
-          <a class="card-title" href="#" target="_blank" rel="noreferrer noopener">
-            Project Title <span class="ext">↗</span>
+          <a class="card-title" href="{{ p.url }}" target="_blank" rel="noreferrer noopener">
+            {{ p.title }} <span class="ext">↗</span>
           </a>
-          <p class="p">Project description placeholder.</p>
+
+          <p class="p">{{ p.desc }}</p>
+
           <div class="tags">
-            <span class="tag">React</span><span class="tag">Next.js</span>
+            {% for t in p.tags %}
+              <span class="tag">{{ t }}</span>
+            {% endfor %}
           </div>
         </div>
-      </div>
+      </article>
+      {% endfor %}
 
       <div class="section-cta">
-        <a class="cta-link" href="/archive">
-          View Full Project Archive <span class="ext">→</span>
-        </a>
+        <a class="cta-link" href="/archive">View Full Project Archive <span class="ext">→</span></a>
       </div>
     </section>
 
+    {% load static %}
     <section id="writing" class="section">
       <h2 class="section-title">Writing</h2>
 
+      {% for w in writing %}
       <div class="writing-row">
-        <img class="writing-thumb" src="https://via.placeholder.com/144x81" alt="Article thumbnail">
+        <img class="writing-thumb" src="{% static w.thumb %}" alt="Article thumbnail">
         <div class="writing-text">
-          <div class="writing-year">2024</div>
-          <a class="card-title" href="#" target="_blank" rel="noreferrer noopener">
-            Article title example <span class="ext">↗</span>
+          <div class="writing-year">{{ w.year }}</div>
+          <a class="card-title" href="{{ w.url }}" target="_blank" rel="noreferrer noopener">
+            {{ w.title }} <span class="ext">↗</span>
           </a>
         </div>
       </div>
+      {% endfor %}
 
       <div class="footer-note">
-        Built with Next.js + Tailwind (style reference), deployed with Vercel, font: Inter.
+        Designed in Figma, built in VS Code, built with Next.js + Tailwind CSS, deployed with Vercel, font: Inter.
       </div>
     </section>
   </main>
