@@ -1,7 +1,7 @@
 SITE = {
     "profile": {
-        "name": "Your Name",
-        "role": "Frontend Engineer", 
+        "name": "Samuel Parsakian",
+        "role": "Frontend Engineer",
         "tagline": "Accessible, pixel-perfect digital experiences for the web.",
     },
     "social": [
@@ -50,9 +50,12 @@ SITE = {
         },
     ],
     "writing": [
-        {"year": "2024", "title": "Accessibility Pitfalls and How to Avoid Them", "url": "https://klaviyo.tech", "thumb": "img/writing-accessibility-pitfalls.jpg"},
-        {"year": "2020", "title": "Integrating Algolia Search with WordPress Multisite", "url": "https://upstatement.com", "thumb": "img/writing-algolia-search.jpg"},
-        {"year": "2019", "title": "Building a Headless Mobile App CMS From Scratch", "url": "https://upstatement.com", "thumb": "img/writing-headless-cms.jpg"},
+        {"year": "2024", "title": "Accessibility Pitfalls and How to Avoid Them",
+            "url": "https://klaviyo.tech", "thumb": "img/writing-accessibility-pitfalls.jpg"},
+        {"year": "2020", "title": "Integrating Algolia Search with WordPress Multisite",
+            "url": "https://upstatement.com", "thumb": "img/writing-algolia-search.jpg"},
+        {"year": "2019", "title": "Building a Headless Mobile App CMS From Scratch",
+            "url": "https://upstatement.com", "thumb": "img/writing-headless-cms.jpg"},
     ],
     "archive_rows": [
         {

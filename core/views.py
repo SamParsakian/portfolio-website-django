@@ -14,5 +14,6 @@ def home(request):
 
 def archive(request):
     return render(request, "core/archive.html", {
+        "profile": SITE["profile"],
         "rows": SITE["archive_rows"]
     })

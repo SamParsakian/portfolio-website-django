@@ -46,19 +46,34 @@
     });
   });
 
-  // Enable scrolling right content when mouse is over left sidebar (desktop only)
-  const leftSidebar = document.querySelector(".left");
-  if (leftSidebar) {
-    leftSidebar.addEventListener("wheel", (e) => {
-      if (isMobileMode()) return; // Skip on mobile
-      const scroller = document.querySelector(".right");
-      if (!scroller) return;
-      
-      // Redirect scroll events from left sidebar to right container with 4x speed
+  // Desktop only: forward mouse wheel from LEFT panel to RIGHT scroll container
+  const left = document.querySelector(".left");
+  const right = document.querySelector(".right");
+
+  const isDesktopMode = () => window.matchMedia("(min-width: 901px)").matches;
+
+  if (left && right) {
+    left.addEventListener("wheel", (e) => {
+      if (!isDesktopMode()) return;
+
+      // prevent the page from trying to scroll (or feeling slow)
       e.preventDefault();
-      scroller.scrollBy({
-        top: e.deltaY * 4.0,
-        behavior: 'auto'
+
+      // Handle deltaMode properly for consistent physics
+      let deltaY = e.deltaY;
+      
+      // deltaMode 0 = pixels (default), 1 = lines, 2 = pages  
+      if (e.deltaMode === 1) {
+        deltaY *= 16; // lines to pixels
+      } else if (e.deltaMode === 2) {
+        deltaY *= window.innerHeight; // pages to pixels
+      }
+
+      // Use scrollBy with auto behavior to match native physics exactly
+      right.scrollBy({ 
+        top: deltaY, 
+        left: 0, 
+        behavior: "auto" 
       });
     }, { passive: false });
   }
