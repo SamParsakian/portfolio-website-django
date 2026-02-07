@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block title %}All Projects{% endblock %}
+
+{% block content %}
+<div class="archive-page">
+  <div class="archive-wrap">
+
+    <a class="archive-back" href="/">← Brittany Chiang</a>
+    <h1 class="archive-title">All Projects</h1>
+
+    <div class="archive-table">
+      <div class="archive-head">
+        <div>Year</div>
+        <div>Project</div>
+        <div>Made at</div>
+        <div>Built with</div>
+        <div>Link</div>
+      </div>
+
+      {% for r in rows %}
+      <div class="archive-row">
+        <div class="archive-year">{{ r.year }}</div>
+
+        <div class="archive-project">
+          <div class="archive-project-name">{{ r.project }}</div>
+        </div>
+
+        <div class="archive-madeat">{{ r.made_at|default:"" }}</div>
+
+        <div class="archive-builtwith">
+          {% for t in r.built_with %}
+            <span class="tag">{{ t }}</span>
+          {% endfor %}
+        </div>
+
+        <div class="archive-link">
+          {% if r.link_url %}
+            <a class="archive-a" href="{{ r.link_url }}" target="_blank" rel="noreferrer noopener">
+              {{ r.link_label }} <span class="ext">↗</span>
+            </a>
+          {% endif %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+  </div>
+</div>
+{% endblock %}

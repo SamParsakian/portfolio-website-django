@@ -187,3 +187,87 @@ body{
   font-size:13px;
   color:rgba(168,178,209,0.75);
 }
+
+/* ===== Archive page ===== */
+.archive-page{
+  min-height:100vh;
+  padding: 90px 84px;
+}
+.archive-wrap{
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.archive-back{
+  display:inline-block;
+  color: var(--accent);
+  text-decoration:none;
+  font-weight:600;
+  margin-bottom: 18px;
+}
+.archive-back:hover{text-decoration:underline;}
+
+.archive-title{
+  color: var(--white);
+  font-size: 52px;
+  font-weight: 800;
+  margin: 0 0 28px;
+}
+
+.archive-table{
+  margin-top: 30px;
+}
+
+.archive-head{
+  display:grid;
+  grid-template-columns: 80px 2.2fr 1.2fr 2.2fr 1.2fr;
+  gap: 18px;
+  padding: 12px 0;
+  color: rgba(168,178,209,0.75);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: none;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.archive-row{
+  display:grid;
+  grid-template-columns: 80px 2.2fr 1.2fr 2.2fr 1.2fr;
+  gap: 18px;
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  align-items:start;
+}
+
+.archive-year{
+  color: rgba(168,178,209,0.75);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  padding-top: 2px;
+}
+
+.archive-project-name{
+  color: var(--white);
+  font-weight: 700;
+}
+
+.archive-madeat{
+  color: var(--slate);
+}
+
+.archive-builtwith{
+  display:flex;
+  flex-wrap:wrap;
+  gap: 10px;
+}
+
+.archive-link{
+  text-align:left;
+}
+
+.archive-a{
+  color: var(--accent);
+  text-decoration:none;
+  font-weight:600;
+}
+.archive-a:hover{text-decoration:underline;}
