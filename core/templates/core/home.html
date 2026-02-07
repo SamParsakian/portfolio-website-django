@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
-{% block title %}Portfolio{% endblock %}
+{% block title %}{{ profile.name }} | Portfolio{% endblock %}
 
 {% block content %}
 <a class="skip-link" href="#content">Skip to Content</a>
@@ -131,7 +131,7 @@
           <img
             class="writing-thumb"
             src="{% static w.thumb %}"
-            alt="Article thumbnail"
+            alt="{{ w.title }}"
             width="144" height="81"
             loading="lazy"
             decoding="async"

@@ -313,9 +313,10 @@ body{
   background: rgba(17, 34, 64, 0.55);
 }
 
-/* Remove ugly default outline on inner links; keep clean look */
+/* Visible focus on inner links for keyboard users */
 .card-row a:focus{
-  outline: none;
+  outline: 2px solid rgba(100, 255, 218, 0.6);
+  outline-offset: 2px;
 }
 
 /* ===== Responsive ===== */

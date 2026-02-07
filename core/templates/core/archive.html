@@ -1,5 +1,6 @@
 {% extends "base.html" %}
-{% block title %}All Projects{% endblock %}
+{% block title %}All Projects | {{ profile.name }}{% endblock %}
+{% block meta_description %}Full project archive — {{ profile.name }}, {{ profile.role }}.{% endblock %}
 
 {% block content %}
 <div class="archive-page">

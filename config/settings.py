@@ -78,7 +78,9 @@ if not DEBUG:
     SECURE_SSL_REDIRECT = True
     
     SESSION_COOKIE_SECURE = True
+    SESSION_COOKIE_HTTPONLY = True
     CSRF_COOKIE_SECURE = True
+    CSRF_COOKIE_HTTPONLY = True
     
     SECURE_HSTS_SECONDS = 3600  # 1 hour first (increase later)
     SECURE_HSTS_INCLUDE_SUBDOMAINS = True
