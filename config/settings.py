@@ -10,22 +10,45 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
+import os
+import environ
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# Initialize environment variables
+env = environ.Env(DEBUG=(bool, False))
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
+# Load environment variables.
+# Default to local development settings unless explicitly set to production.
+production_env = BASE_DIR / ".envs/.production/.django"
+local_env = BASE_DIR / ".envs/.local/.django"
+environment = os.getenv("DJANGO_ENV", "local").lower()
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-h=#&3@$n+_nu&@p8@@wko#4zllga@vyse%pcl*v-4s4=zetuj*'
+if environment == "production" and production_env.exists():
+    env.read_env(production_env)
+elif local_env.exists():
+    env.read_env(local_env)
+elif production_env.exists():
+    env.read_env(production_env)
+else:
+    # Fallback for basic development without env files
+    pass
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+SECRET_KEY = env("DJANGO_SECRET_KEY", default="django-insecure-development-key-change-in-production")
+DEBUG = env.bool("DJANGO_DEBUG", default=True)
+ALLOWED_HOSTS = env.list("DJANGO_ALLOWED_HOSTS", default=["localhost", "127.0.0.1"])
+CSRF_TRUSTED_ORIGINS = env.list("DJANGO_CSRF_TRUSTED_ORIGINS", default=[])
 
-ALLOWED_HOSTS = []
+# Local dev: always allow local hosts so 127.0.0.1:8000 / localhost:8000 never get 400
+if environment != "production":
+    _local_hosts = {"localhost", "127.0.0.1"}
+    ALLOWED_HOSTS = list(_local_hosts | set(ALLOWED_HOSTS))
+    _local_csrf = {"http://127.0.0.1:8000", "http://localhost:8000"}
+    CSRF_TRUSTED_ORIGINS = list(_local_csrf | set(CSRF_TRUSTED_ORIGINS))
+    if not DEBUG:
+        DEBUG = True
 
 
 # Application definition
