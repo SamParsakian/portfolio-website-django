@@ -5,9 +5,9 @@ SITE = {
         "tagline": "\"Make it work, make it right, make it fast.\"<br><em>Kent Beck</em>",
     },
     "social": [
-        {"label": "GitHub", "url": "https://github.com/"},
-        {"label": "LinkedIn", "url": "https://www.linkedin.com/"},
-        {"label": "CodePen", "url": "https://codepen.io/"},
+        {"label": "GitHub", "url": "https://github.com/username"},
+        {"label": "LinkedIn", "url": "https://linkedin.com/in/username"},
+        {"label": "CodePen", "url": "https://codepen.io"},
     ],
     "about": [
         "Replace with a short bio about yourself. Mention your role, main skills, and technologies you work with.",
