@@ -1,17 +1,17 @@
 SITE = {
     "profile": {
-        "name": "Samuel Parsakian",
-        "role": "DevOps Engineer",
+        "name": "Your Name",
+        "role": "Your Role",
         "tagline": "\"Make it work, make it right, make it fast.\"<br><em>Kent Beck</em>",
     },
     "social": [
-        {"label": "GitHub", "url": "https://github.com/samkian0007"},
-        {"label": "LinkedIn", "url": "https://www.linkedin.com/in/samparsakian"},
+        {"label": "GitHub", "url": "https://github.com/"},
+        {"label": "LinkedIn", "url": "https://www.linkedin.com/"},
         {"label": "CodePen", "url": "https://codepen.io/"},
     ],
     "about": [
-        "I'm a DevOps Engineering student focused on Linux, Docker, Git, CI/CD basics, scripting, and databases. I also have a strong math base and some practice with AI tools and libraries like TensorFlow and Scikit-learn.",
-        "I have experience from both the healthcare sector and project management, which strengthened my teamwork, planning, and communication. I'm looking for an internship (LIA/praktik) in DevOps where I can support automation, CI/CD, and cloud operations."
+        "Replace with a short bio about yourself. Mention your role, main skills, and technologies you work with.",
+        "Add a second paragraph if you like: background, what you're looking for (e.g. internships, roles), or what you enjoy building."
     ],
     "experience": [
         {

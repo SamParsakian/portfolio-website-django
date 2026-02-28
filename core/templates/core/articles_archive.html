@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}All Articles{% endblock %}
+
+{% block content %}
+<div class="archive-page">
+  <div class="archive-wrap">
+    <a class="archive-back" href="/">← {{ profile.name }}</a>
+    <h1 class="archive-title">All Articles</h1>
+
+    <div class="articles-list">
+      {% for w in writing %}
+      <div class="writing-row">
+        <picture>
+          <source srcset="{% static w.thumb_webp %}" type="image/webp">
+          <img
+            class="writing-thumb"
+            src="{% static w.thumb %}"
+            alt="Article thumbnail"
+            width="144"
+            height="81"
+            loading="lazy"
+            decoding="async"
+          >
+        </picture>
+        <div class="writing-text">
+          <div class="writing-year">{{ w.year }}</div>
+          <a class="card-title" href="{{ w.url }}" target="_blank" rel="noreferrer noopener">
+            {{ w.title }} <span class="ext">↗</span>
+          </a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% endblock %}
