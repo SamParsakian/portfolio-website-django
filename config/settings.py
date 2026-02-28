@@ -76,6 +76,24 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'config.urls'
 
+# ===== DJANGO SECURITY SETTINGS =====
+if not DEBUG:
+    # If behind Nginx/HTTPS
+    SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
+    
+    SECURE_SSL_REDIRECT = True
+    
+    SESSION_COOKIE_SECURE = True
+    CSRF_COOKIE_SECURE = True
+    
+    SECURE_HSTS_SECONDS = 3600  # 1 hour first (increase later)
+    SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+    SECURE_HSTS_PRELOAD = False  # keep False until you're 100% sure
+    
+    SECURE_CONTENT_TYPE_NOSNIFF = True
+    X_FRAME_OPTIONS = "DENY"
+    SECURE_REFERRER_POLICY = "strict-origin-when-cross-origin"
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
