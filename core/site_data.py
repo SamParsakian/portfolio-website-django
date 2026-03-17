@@ -2,7 +2,7 @@ SITE = {
     "profile": {
         "name": "Your Name",
         "role": "Your Role",
-        "tagline": "\"Make it work, make it right, make it fast.\"<br><em>Kent Beck</em>",
+        "tagline": "Replace with a short tagline or quote. You can use <em>Author Name</em> for attribution.",
     },
     "social": [
         {"label": "GitHub", "url": "https://github.com/username"},
@@ -16,89 +16,89 @@ SITE = {
     "experience": [
         {
             "date": "2024 — PRESENT",
-            "title": "Senior Frontend Engineer, Accessibility",
-            "org": "Klaviyo",
-            "url": "https://www.klaviyo.com",
-            "desc": "Build and maintain critical components used to construct Klaviyo's frontend, across the whole product. Work closely with cross-functional teams, including developers, designers, and product managers, to implement and advocate for best practices in web accessibility.",
-            "tags": ["JavaScript", "TypeScript", "React", "Storybook"]
-        },
-        {
-            "date": "2018 — 2024",
-            "title": "Lead Engineer",
-            "org": "Upstatement",
-            "url": "https://upstatement.com",
-            "desc": "Lead the engineering team for a major client platform. Contribute to a reusable design system and ship high-quality, accessible frontends across multiple properties.",
-            "tags": ["JavaScript", "TypeScript", "HTML & SCSS", "React", "Next.js", "WordPress", "Contentful", "Node.js"]
-        },
-        {
-            "date": "2016 — 2018",
-            "title": "Frontend Developer",
-            "org": "Example Co",
+            "title": "Your Current or Most Recent Role",
+            "org": "Company Name",
             "url": "https://example.com",
-            "desc": "Built responsive interfaces and collaborated with design and backend teams. Replace with your own role and description.",
-            "tags": ["HTML", "CSS", "JavaScript", "REST APIs"]
+            "desc": "Replace with a short description of your responsibilities and impact. Mention technologies and outcomes.",
+            "tags": ["Tag1", "Tag2", "Tag3"]
         },
         {
-            "date": "2014 — 2016",
-            "title": "Junior Developer",
-            "org": "Starter Agency",
+            "date": "2022 — 2024",
+            "title": "Previous Role Title",
+            "org": "Company Name",
             "url": "https://example.com",
-            "desc": "Supported feature development and learned best practices. Replace with your own role and description.",
-            "tags": ["HTML", "CSS", "jQuery", "PHP"]
+            "desc": "Replace with your own role description. Keep it concise.",
+            "tags": ["Tag1", "Tag2"]
+        },
+        {
+            "date": "2020 — 2022",
+            "title": "Earlier Role Title",
+            "org": "Company Name",
+            "url": "https://example.com",
+            "desc": "Replace with your own role and description.",
+            "tags": ["Tag1", "Tag2"]
+        },
+        {
+            "date": "2018 — 2020",
+            "title": "Entry or Junior Role",
+            "org": "Company Name",
+            "url": "https://example.com",
+            "desc": "Replace with your own role and description.",
+            "tags": ["Tag1", "Tag2"]
         },
     ],
     "projects": [
         {
-            "title": "Spotify Profile",
-            "url": "https://spotify-profile.herokuapp.com",
-            "desc": "A web app for visualizing personalized Spotify data. View your top artists, tracks, and playlists over different time ranges.",
-            "tags": ["React", "Express", "Spotify API", "Heroku"],
+            "title": "Project One",
+            "url": "https://example.com",
+            "desc": "Replace with a short description of the project: what it does, who it's for, and what you used.",
+            "tags": ["Tag1", "Tag2", "Tag3"],
             "thumb": "img/optimized/projects/project-spotify-profile.jpg",
             "thumb_webp": "img/optimized_webp/projects/project-spotify-profile.webp",
-            "thumb_alt": "Spotify Profile web application screenshot"
+            "thumb_alt": "Project one screenshot"
         },
         {
-            "title": "Halcyon Theme",
-            "url": "https://halcyon-theme.netlify.app",
-            "desc": "A minimal, dark blue theme for VS Code, Sublime Text, Atom, and more.",
-            "tags": ["VS Code", "Theme", "Netlify"],
+            "title": "Project Two",
+            "url": "https://example.com",
+            "desc": "Replace with your project description.",
+            "tags": ["Tag1", "Tag2"],
             "thumb": "img/optimized/projects/project-halcyon-theme.jpg",
             "thumb_webp": "img/optimized_webp/projects/project-halcyon-theme.webp",
-            "thumb_alt": "Halcyon VS Code theme preview"
+            "thumb_alt": "Project two screenshot"
         },
         {
-            "title": "Dashboard App",
+            "title": "Project Three",
             "url": "https://example.com",
-            "desc": "Replace with your project description. Uses existing project thumbnail.",
-            "tags": ["React", "Django", "PostgreSQL"],
+            "desc": "Replace with your project description.",
+            "tags": ["Tag1", "Tag2"],
             "thumb": "img/optimized/projects/project-dashboard.jpg",
             "thumb_webp": "img/optimized_webp/projects/project-dashboard.webp",
-            "thumb_alt": "Dashboard application screenshot"
+            "thumb_alt": "Project three screenshot"
         },
         {
-            "title": "Web App",
+            "title": "Project Four",
             "url": "https://example.com",
-            "desc": "Replace with your project description. Uses existing project thumbnail.",
-            "tags": ["Python", "Docker", "CI/CD"],
+            "desc": "Replace with your project description.",
+            "tags": ["Tag1", "Tag2"],
             "thumb": "img/optimized/projects/project-web-app-1.jpg",
             "thumb_webp": "img/optimized_webp/projects/project-web-app-1.webp",
-            "thumb_alt": "Web application screenshot"
+            "thumb_alt": "Project four screenshot"
         },
     ],
     "writing": [
-        {"year": "2024", "title": "Accessibility Pitfalls and How to Avoid Them",
-            "url": "https://klaviyo.tech",
+        {"year": "2024", "title": "Replace with your article or post title",
+            "url": "https://example.com",
             "thumb": "img/optimized/writing/writing-accessibility-pitfalls.jpg",
             "thumb_webp": "img/optimized_webp/writing/writing-accessibility-pitfalls.webp"},
-        {"year": "2020", "title": "Integrating Algolia Search with WordPress Multisite",
-            "url": "https://upstatement.com",
+        {"year": "2023", "title": "Replace with your article title",
+            "url": "https://example.com",
             "thumb": "img/optimized/writing/writing-algolia-search.jpg",
             "thumb_webp": "img/optimized_webp/writing/writing-algolia-search.webp"},
-        {"year": "2019", "title": "Building a Headless Mobile App CMS From Scratch",
-            "url": "https://upstatement.com",
+        {"year": "2022", "title": "Replace with your article title",
+            "url": "https://example.com",
             "thumb": "img/optimized/writing/writing-headless-cms.jpg",
             "thumb_webp": "img/optimized_webp/writing/writing-headless-cms.webp"},
-        {"year": "2018", "title": "Replace with your fourth article title",
+        {"year": "2021", "title": "Replace with your article title",
             "url": "https://example.com",
             "thumb": "img/optimized/writing/writing-headless-cms.jpg",
             "thumb_webp": "img/optimized_webp/writing/writing-headless-cms.webp"},
@@ -106,19 +106,19 @@ SITE = {
     "archive_rows": [
         {
             "year": 2023,
-            "project": "Emerson Collective",
-            "made_at": "Upstatement",
-            "built_with": ["Next.js", "TypeScript", "SCSS", "Contentful"],
-            "link_label": "emersoncollective.com",
-            "link_url": "https://www.emersoncollective.com",
+            "project": "Project or Client Name",
+            "made_at": "Company or Agency",
+            "built_with": ["Tech1", "Tech2", "Tech3"],
+            "link_label": "example.com",
+            "link_url": "https://example.com",
         },
         {
             "year": 2022,
-            "project": "Threadable",
-            "made_at": "Upstatement",
-            "built_with": ["React Native", "Ruby on Rails", "Firebase"],
-            "link_label": "apps.apple.com",
-            "link_url": "https://apps.apple.com",
+            "project": "Another Project Name",
+            "made_at": "Company or Agency",
+            "built_with": ["Tech1", "Tech2"],
+            "link_label": "example.com",
+            "link_url": "https://example.com",
         },
     ]
 }
