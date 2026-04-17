@@ -27,3 +27,8 @@ urlpatterns = [
 # Serve static files during development
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATICFILES_DIRS[0])
+
+if getattr(settings, "ENABLE_DEBUG_TOOLBAR", False):
+    from debug_toolbar.toolbar import debug_toolbar_urls
+
+    urlpatterns += debug_toolbar_urls()

@@ -39,10 +39,12 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
+This installs Django and the local development debugger, Django Debug Toolbar.
+
 ### 4. Run the development server
 
 ```bash
-python manage.py runserver
+python manage.py runserver 9000
 ```
 
 **Windows:** use `python` if `python3` is not in PATH.
@@ -51,7 +53,29 @@ python manage.py runserver
 
 ### 5. Open in browser
 
-Go to: **http://127.0.0.1:8000/**
+Go to: **http://127.0.0.1:9000/**
+
+## Django Debug Toolbar
+
+The project includes Django Debug Toolbar for local development. It is enabled only when:
+
+- `DEBUG=True`
+- `DJANGO_ENV` is not `production`
+- tests are not running
+
+When the server is running locally, open **http://127.0.0.1:9000/** and look for the toolbar on the page. The toolbar URLs are added automatically under `/__debug__/` in local debug mode.
+
+If you use VS Code, choose the debug configuration:
+
+```text
+Python: Django
+```
+
+It runs the same command on every OS:
+
+```bash
+python manage.py runserver 9000
+```
 
 ---
 

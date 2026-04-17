@@ -11,6 +11,9 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 import os
+import mimetypes
+import socket
+import sys
 import environ
 from pathlib import Path
 
@@ -40,15 +43,26 @@ SECRET_KEY = env("DJANGO_SECRET_KEY", default="django-insecure-development-key-c
 DEBUG = env.bool("DJANGO_DEBUG", default=True)
 ALLOWED_HOSTS = env.list("DJANGO_ALLOWED_HOSTS", default=["localhost", "127.0.0.1"])
 CSRF_TRUSTED_ORIGINS = env.list("DJANGO_CSRF_TRUSTED_ORIGINS", default=[])
+TESTING = "test" in sys.argv or "PYTEST_VERSION" in os.environ
 
-# Local dev: always allow local hosts so 127.0.0.1:8000 / localhost:8000 never get 400
+# Local dev: always allow local hosts on the common debug ports.
 if environment != "production":
     _local_hosts = {"localhost", "127.0.0.1"}
     ALLOWED_HOSTS = list(_local_hosts | set(ALLOWED_HOSTS))
-    _local_csrf = {"http://127.0.0.1:8000", "http://localhost:8000"}
+    _local_csrf = {
+        "http://127.0.0.1:8000",
+        "http://localhost:8000",
+        "http://127.0.0.1:9000",
+        "http://localhost:9000",
+    }
     CSRF_TRUSTED_ORIGINS = list(_local_csrf | set(CSRF_TRUSTED_ORIGINS))
     if not DEBUG:
         DEBUG = True
+
+# Windows can sometimes serve debug_toolbar JavaScript with the wrong MIME type.
+mimetypes.add_type("application/javascript", ".js", True)
+
+ENABLE_DEBUG_TOOLBAR = DEBUG and environment != "production" and not TESTING
 
 
 # Application definition
@@ -63,6 +77,9 @@ INSTALLED_APPS = [
     'core',
 ]
 
+if ENABLE_DEBUG_TOOLBAR:
+    INSTALLED_APPS.append("debug_toolbar")
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
@@ -73,6 +90,21 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+if ENABLE_DEBUG_TOOLBAR:
+    MIDDLEWARE.insert(2, "debug_toolbar.middleware.DebugToolbarMiddleware")
+
+INTERNAL_IPS = [
+    "127.0.0.1",
+    "::1",
+]
+
+if ENABLE_DEBUG_TOOLBAR:
+    try:
+        hostname, _, ips = socket.gethostbyname_ex(socket.gethostname())
+    except socket.gaierror:
+        ips = []
+    INTERNAL_IPS += [ip.rsplit(".", 1)[0] + ".1" for ip in ips]
 
 ROOT_URLCONF = 'config.urls'
 
@@ -102,6 +134,7 @@ TEMPLATES = [
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.request',
+                'django.template.context_processors.debug',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
